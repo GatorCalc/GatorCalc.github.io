@@ -128,14 +128,29 @@ input {
 	height: 91%;
 	max-height: 91%;
 	overflow-y: scroll;
-	padding-left: 5px;
-	padding-right: 5px;
-	background-color: #111111;
+	background-color: #100800;
+	outline-style: none;
+	padding: 0 1em;
+	text-align: center;
+}
+
+#faqContainer {
+	max-width: 1024px;
 	color: yellow;
 	font-size: 250%;
-	outline-style: none;
+	line-height: 1em;
+	display: inline-block;
+	text-align: left;
 }
 
 .answer {
-	font-size: 50%;
+	font-size: 60%;
+        display: block;
+        color: #c0c000;
+	line-height: 1.4em;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }

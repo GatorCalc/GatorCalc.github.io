@@ -199,6 +199,7 @@
 		</div>
 		<button id="faq" onclick="goFaq()">FAQ</button>
 		<div class="hidden" id="faqScreen" tabindex="0">
+			<div id="faqContainer">
 			<br>
 			<center>FAQ</center><br>
 			What does this do?
@@ -231,21 +232,18 @@
 			What do the buttons in the middle column do?
 			<span class="answer">
 			These buttons are used to determine when it is optimal to fuel. They each provide sightly different bits of information that you can tailor your fueling preferences to.
-			<br>The "Optimize" button will take the number of zones to fuel currently shown, and figure out the best starting zone to fuel in order to maximize population.
-			<br>The "Minimize" button will try to determine the fewest number of zones you'd need to fuel for in order to get the maximum number of Amalgamators possible, thus maximizing MI gains. <br>The "Minimize - 1" button will do the same thing, 
-			but with getting 1 less Gator. This can be useful if you'd need to fuel for an entire run in order to get your Max number of gators, and you'd rather keep the MI gains.
-			<br>The "Minimize at Zone" button will attempt to minimize, while ensuring you get your last Amalgamator by the specified zone. This is useful if you normally wouldn't get your final Gator until late in your run otherwise, as you will 
-			get the benefit of the extra Gator earlier. 
-			<br>The "Minimize Capacity" button also adjusts your capacity value to minimize number of zones to fuel. You'll need to use the in-game capacity slider to adjust to the recommended value. 
-			<br>The "Force Gator At Zone" button will determine how many coordinations you'd need to withhold from buying in order to get an extra gator on the zone specified. This will update the row of the corresponding zone in the table below the 
-			results table, but won't change anything else. 
-			<br>The "Coords Withheld" option allows you to set a certain number of coordination upgrades to refrain from buying, in order to get an extra amalgamator earlier or with less fueling than otherwise would be possible. 
-			<br>The "Withhold Coords Zone/Goal" option allows you to specify a certain zone to stop buying coordinations in order to reach the chosen goal number of amalgamators. These last two options can only be used separately, not together. This will 
-			also update the "Zones Withheld" result with the number of zones you have to hold off on buying coordinations, and therefore the number of coordinations behind you will be.
-			<br>Finally, the "Use 5 zone breakpoints" tick will calculate updates to your Amalgamators only after every 5th zone when they would die from an Omnipotrimp explosion. Without this option 
-			checked, most of the time new Amalgamators will show up on the zone after a spire, due to the ratio needed decreasing. However, as Gators are only updated on trimp death, if you survive after beating a spire for the next 5 zones (which 
-			you are likely to do if you're strong enough to have beaten it), then you would get 5 more coordination upgrades before your next death, which will increase your army size, and therefore the needed population for your next Gator, possibly 
-			pushing it beyond the population you've amassed. 
+			<ul><li><strong>Optimize</strong> will take the number of zones to fuel currently shown, and figure out the best starting zone to fuel in order to maximize population.</li>
+			<li><strong>Minimize</strong> will try to determine the fewest number of zones you'd need to fuel for in order to get the maximum number of Amalgamators possible, thus maximizing MI gains.</li>
+			<li><strong>Minimize - 1</strong> will do the same thing, but with getting 1 less Gator. This can be useful if you'd need to fuel for an entire run in order to get your Max number of gators, and you'd rather keep the MI gains.</li>
+			<li><strong>Minimize at Zone</strong> will attempt to minimize, while ensuring you get your last Amalgamator by the specified zone. This is useful if you normally wouldn't get your final Gator until late in your run otherwise, as you will get the benefit of the extra Gator earlier.</li>
+			<li><strong>Minimize Capacity</strong> also adjusts your capacity value to minimize the number of zones to fuel. You'll need to use the in-game capacity slider to adjust to the recommended value.</li>
+			<li><strong>Force Gator At Zone</strong> will determine how many coordinations you'd need to withhold from buying in order to get an extra gator on the zone specified. This will update the row of the corresponding zone in the table below the 
+			results table, but won't change anything else.</li>
+			</ul>
+			<p>The <strong>Coords Withheld</strong> option allows you to set a certain number of coordination upgrades to refrain from buying, in order to get an extra amalgamator earlier or with less fueling than otherwise would be possible.</p>
+			<p>The <strong>Withhold Coords Zone/Goal</strong> option allows you to specify a certain zone to stop buying coordinations in order to reach the chosen goal number of amalgamators.</p>
+			<p>These last two options can only be used separately, not together. This will also update the "Zones Withheld" result with the number of zones you have to hold off on buying coordinations, and therefore the number of coordinations behind you will be.</p>
+			<p>Finally, the <strong>Use 5 zone breakpoints</strong> tick box will calculate updates to your Amalgamators only after every 5th zone when the Trimps would die from an Omnipotrimp explosion. Without this option checked, most of the time new Amalgamators will show up on the zone after a spire, due to the ratio decreasing. However, as Gators are only updated on trimp death, if you survive after beating a spire for the next 5 zones (which you are likely to do if you're strong enough to have beaten it), then you would get 5 more coordination upgrades before your next death. This will increase your army size, and therefore the needed population for your next Gator, possibly pushing it beyond the population you've amassed.</p>
 			</span>
 			<br>
 			What assumptions are being made?
@@ -272,8 +270,7 @@
 			<span class="answer">
 			This was last updated on November 7, 2018.
 			</span>
-			<br>
-			<br>
+			</div>
 		</div>
 	</body>
 	
