@@ -96,18 +96,18 @@
 			<br>
 			<center>Version <span id="version"></span></center>
 			<br><br>
-			<button class="macro" id="optimize" onclick="optimize()">Optimize</button><br>
+			<button class="macro" id="optimize" title="Optimize fueling start zone, keeping the number of fuel zones constant" onclick="optimize()">Optimize</button><br>
 			<div class="filler"></div>
-			<button class="macro" id="minimize" onclick="minimize(0)">Minimize</button><br>
+			<button class="macro" id="minimize" title="Minimize the number of fueling zones to get the maximum number of Gators" onclick="minimize(0)">Minimize</button><br>
 			<div class="filler"></div>
-			<button class="macro" id="minimize-1" onclick="minimize(1)">Minimize - 1</button><br>
+			<button class="macro" id="minimize-1" title="Like minimize, but skipping the last Gator" onclick="minimize(1)">Minimize - 1</button><br>
 			<div class="filler"></div>
-			<button class="macro" id="minimizeAtZone" onclick="minimize(0, 1)">Minimize At Zone:</button><br>
+			<button class="macro" id="minimizeAtZone" title="Like minimize, but guarantees the last Gator appears by the specified zone" onclick="minimize(0, 1)">Minimize At Zone:</button><br>
 			<input class="macroZone" id="minimizeZone" type="number" onchange="changeMinimizeZone(this.value)"><br>
 			<div class="filler"></div>
-			<button class="macro" id="minimizeCapacity" onclick="minimize(0, 2)">Minimize Capacity</button><br>
+			<button class="macro" id="minimizeCapacity" title="Like minimize, but using the capacity slider to further reduce the number of fueling zones" onclick="minimize(0, 2)">Minimize Capacity</button><br>
 			<div class="filler"></div>
-			<button class="macro" id="forceGator" onclick="forceGator()">Force Gator At Zone:</button><br>
+			<button class="macro" id="forceGator" title="Calculates how many coordinations to withhold to get a Gator at the specified zone. Only updates the small table on the bottom right." onclick="forceGator()">Force Gator At Zone:</button><br>
 			<input class="macroZone" id="gatorZone" type="number" onchange="changeGatorZone(this.value)"><br>
 			<div class="filler"></div>
 			<label title="Hold back on buying this many coordination upgrades throughout the run">
