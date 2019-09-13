@@ -149,3 +149,8 @@ input {
         color: #c0c000;
 	line-height: 1.4em;
 }
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
