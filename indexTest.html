@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Fueling and Amalgamator Calculator</title>
+		<title>GatorCalc Test Version</title>
 		<script src="lz-string.js"></script>
-		<script type="text/javascript" src="gator.js"></script>
+		<script type="text/javascript" src="gatorTest.js"></script>
 		<link rel="stylesheet" type="text/css" href="stylish.css" />
 		<meta charset="utf-8" />
 	</head>
@@ -17,6 +17,9 @@
 			<label title="Check this to keep your run stats the same, only updating perks and DG levels">
 				<input id="lockRun" type="checkbox">Lock Run Stats</label> 
 			<span id="invalid"></span>
+			<br>
+			<label id="offset5Label" title="Check this to only have gators updated every 5 zones when you'd die from an omnipotrimp explosion">
+				<input id="offset5" type="checkbox">Use 5 zone breakpoints</label>
 			<br><br>
 			Run Stats<br>
 			<label title="Zone to begin fueling">
@@ -49,13 +52,13 @@
 			</label>
 			<br><br><br>
 			Perk Levels<br>
-			<input id="carp" type="number" onchange="changeCarp(this.value)">&nbspCarpentry
+			<input id="carpentry" type="number" onchange="changeCarpentry(this.value)">&nbspCarpentry
 			<br>
 			<div class="filler"></div>
-			<input id="carp2" type="number" onchange="changeCarp2(this.value)">&nbspCarpentry II
+			<input id="carpentry2" type="number" onchange="changeCarpentry2(this.value)">&nbspCarpentry II
 			<br>
 			<div class="filler"></div>
-			<input id="coord" type="number" onchange="changeCoord(this.value)">&nbspCoordinated
+			<input id="coordinated" type="number" onchange="changeCoordinated(this.value)">&nbspCoordinated
 			<br><br><br>
 			Masteries<br>
 			<select class="select" id="randimp" onchange="changeRandimp(this.value)">
@@ -63,7 +66,11 @@
 				<option value="No">No</option>
 			</select>&nbspRandimp
 			<div class="filler"></div>
-			<br><br>
+			<select class="select" id="magmaFlow" onchange="changeMagmaFlow(this.value)">
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>&nbspMagma Flow
+			<br><br><br>
 			DG Levels<span class="efficiency">Next Upgrade</span><br>
 			<input id="efficiency" type="number" onchange="changeEfficiency(this.value)">&nbspEfficiency
 			<span class="efficiency" id="efficiencyEfficiency"></span>
@@ -93,11 +100,6 @@
 				<option value="Yes">Yes</option>
 				<option value="No">No</option>
 			</select>&nbspSlowburn
-			<div class="filler"></div>
-			<select class="select" id="magmaFlow" onchange="changeMagmaFlow(this.value)">
-				<option value="Yes">Yes</option>
-				<option value="No">No</option>
-			</select>&nbspMagma Flow
 		</div>
 		<div id="macros">
 			<br>
@@ -141,8 +143,6 @@
 			<div class="filler"></div>
 			<button class="macro hidden" id="minimizeAtZone-1" onclick="minimize(1, 1)">Minimize At Zone - 1</button><br>
 			<div class="filler"></div>
-			<label id="offset5Label" title="Check this to only have gators updated every 5 zones when you'd die from an omnipotrimp explosion">
-				<input id="offset5" type="checkbox">Use 5 zone breakpoints</label> 
 			<br><br><br>
 			<center><span id="message"></span></center>
 		</div>
@@ -165,7 +165,7 @@
 					<td></td>
 					<td>Final Army Size</td><td id="finalArmySize">0</td>
 				</tr>
-				<tr><td>Increase per Coord</td><td id="coordIncrease">0</td>
+				<tr><td>Increase per Coord</td><td id="coordinationArmyIncrease">0</td>
 					<td></td>
 					<td>Final Amal Ratio</td><td id="finalAmalRatio">0</td>
 				</tr>
@@ -272,7 +272,7 @@
 			<br>
 			I found an error, what can I do?
 			<span class="answer">
-			Please contact me on reddit (u/Zeralyos) or discord (@Zeraalyos#3692) and I'll look at it right away! Screenshots of your settings are helpful in diagnosing any technical issues.
+			Please contact me on reddit (u/Zeralyos) or discord (@Zeralyos#3692) and I'll look at it right away! Screenshots of your settings are helpful in diagnosing any technical issues.
 			</span>
 			<br>
 			Is this up to date?
